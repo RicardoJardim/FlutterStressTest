@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'main.dart';
+import 'utils.dart';
 
 class API extends StatefulWidget {
   API({
@@ -11,17 +10,38 @@ class API extends StatefulWidget {
 }
 
 class _APIState extends State<API> {
-
   @override
   void initState() {
     super.initState();
   }
 
+  void createViews() {}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.red,
-        body: Center(child: Text("API")),
-      );
+      backgroundColor: Colors.red,
+      body: Center(
+          child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          GlobalButton(
+              title: "Views",
+              callback: () {
+                createViews();
+              }),
+          GlobalButton(
+              title: "Buttons",
+              callback: () {
+                createViews();
+              }),
+          GlobalButton(
+              title: "HTTP Data",
+              callback: () {
+                createViews();
+              })
+        ],
+      )),
+    );
   }
 }
