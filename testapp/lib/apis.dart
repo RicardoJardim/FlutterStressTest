@@ -26,17 +26,27 @@ class _APIState extends State<API> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           GlobalButton(
-              title: "Views",
+              title: "GetCamera",
               callback: () {
                 createViews();
               }),
           GlobalButton(
-              title: "Buttons",
+              title: "GetGallery",
               callback: () {
                 createViews();
               }),
           GlobalButton(
-              title: "HTTP Data",
+              title: "GetGPS",
+              callback: () {
+                createViews();
+              }),
+          GlobalButton(
+              title: "GetCalendar",
+              callback: () {
+                createViews();
+              }),
+          GlobalButton(
+              title: "GetContacts",
               callback: () {
                 createViews();
               })
