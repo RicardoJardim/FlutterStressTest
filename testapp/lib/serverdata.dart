@@ -3,7 +3,7 @@ import 'utils.dart';
 import 'package:http/http.dart' as http;
 import 'package:path_provider/path_provider.dart';
 
-import 'dart:convert';
+import 'dart:convert' as convert;
 import 'dart:io';
 
 class Server extends StatefulWidget {
@@ -20,13 +20,16 @@ class _ServerState extends State<Server> {
     super.initState();
   }
 
+  // ignore: non_constant_identifier_names
   void random_user() async {
     print(DateTime.now());
-    final response = await http
-        .get('https://random-data-api.com/api/users/random_user?size=100');
+
+    final response = await http.get(Uri.https(
+        "random-data-api.com", "/api/users/random_user", {'size': '100'}));
     random_bank();
+    print(response.statusCode);
     if (response.statusCode == 200) {
-      List<dynamic> list = jsonDecode(response.body);
+      List<dynamic> list = convert.jsonDecode(response.body);
       writeCounter(list);
       print(DateTime.now());
     } else {
@@ -35,12 +38,11 @@ class _ServerState extends State<Server> {
   }
 
   void random_bank() async {
-    final response = await http
-        .get('https://random-data-api.com/api/bank/random_bank?size=100');
+    final response = await http.get(Uri.https(
+        "random-data-api.com", "/api/bank/random_bank", {'size': '100'}));
 
     if (response.statusCode == 200) {
-      List<dynamic> list = jsonDecode(response.body);
-      print(list);
+      List<dynamic> list = convert.jsonDecode(response.body);
       writeCounter2(list);
       print(DateTime.now());
     } else {
@@ -82,7 +84,7 @@ class _ServerState extends State<Server> {
     print(DateTime.now());
 
     for (int i = 0; i <= 1000; i++) {
-      viewsWidgets.add(_view(Colors.red));
+      viewsWidgets.add(_view(Colors.green));
     }
     setState(() {});
     print(DateTime.now());
@@ -103,7 +105,7 @@ class _ServerState extends State<Server> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green,
+      backgroundColor: Colors.red,
       body: Center(
           child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,

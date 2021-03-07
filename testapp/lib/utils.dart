@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 class GlobalButton extends StatelessWidget {
@@ -15,17 +17,14 @@ class GlobalButton extends StatelessWidget {
       child: SizedBox(
           height: 40,
           width: MediaQuery.of(context).size.height - 300,
-          child: RaisedButton(
-            elevation: 2,
-            splashColor: Colors.blue[200],
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(7.0),
+          child: ElevatedButton(
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all<Color>(Colors.blue),
+              elevation: MaterialStateProperty.all<double>(2),
             ),
-            color: Colors.blue,
             onPressed: () {
               callback();
             },
-            textColor: Colors.white,
             child: Text(
               title,
               style: TextStyle(
