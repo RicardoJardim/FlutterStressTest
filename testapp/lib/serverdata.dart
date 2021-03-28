@@ -22,29 +22,30 @@ class _ServerState extends State<Server> {
 
   // ignore: non_constant_identifier_names
   void random_user() async {
-    print(DateTime.now());
+    print("Random user start " + DateTime.now().toString());
 
     final response = await http.get(Uri.https(
         "random-data-api.com", "/api/users/random_user", {'size': '100'}));
     random_bank();
-    print(response.statusCode);
     if (response.statusCode == 200) {
       List<dynamic> list = convert.jsonDecode(response.body);
       writeCounter(list);
-      print(DateTime.now());
+      print("Random user end " + DateTime.now().toString());
     } else {
       throw Exception('Failed to load album');
     }
   }
 
   void random_bank() async {
+    print("Random bank start " + DateTime.now().toString());
+
     final response = await http.get(Uri.https(
         "random-data-api.com", "/api/bank/random_bank", {'size': '100'}));
 
     if (response.statusCode == 200) {
       List<dynamic> list = convert.jsonDecode(response.body);
       writeCounter2(list);
-      print(DateTime.now());
+      print("Random bank end " + DateTime.now().toString());
     } else {
       throw Exception('Failed to load album');
     }
@@ -68,17 +69,19 @@ class _ServerState extends State<Server> {
 
   Future<File> writeCounter(List<dynamic> content) async {
     final file = await _localFile;
+    print("Random user write " + DateTime.now().toString());
 
     return file.writeAsString('$content');
   }
 
   Future<File> writeCounter2(List<dynamic> content) async {
     final file = await _localFile2;
+    print("Random bank write " + DateTime.now().toString());
 
     return file.writeAsString('$content');
   }
 
-  List viewsWidgets = List<Widget>();
+  List viewsWidgets = [];
 
   void createViews() {
     print(DateTime.now());
