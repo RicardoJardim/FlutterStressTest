@@ -59,12 +59,13 @@ class _MyHomePageState extends State<MyHomePage> {
           __buildItem('btn2', "modeling1"),
           __buildItem('btn3', "tablet1"),
         ],
+        backgroundColor: Colors.blue,
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.blue,
+        selectedItemColor: Colors.white,
         selectedIconTheme: IconThemeData(size: 30),
         onTap: _onItemTapped,
         showUnselectedLabels: true,
-        unselectedItemColor: Colors.grey,
+        unselectedItemColor: Colors.black,
       ),
     );
   }

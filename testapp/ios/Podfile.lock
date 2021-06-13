@@ -1,0 +1,46 @@
+PODS:
+  - Flutter (1.0.0)
+  - flutter_contacts (0.0.1):
+    - Flutter
+  - geolocator (6.2.0):
+    - Flutter
+  - image_picker (0.0.1):
+    - Flutter
+  - manage_calendar_events (0.0.1):
+    - Flutter
+  - path_provider (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - flutter_contacts (from `.symlinks/plugins/flutter_contacts/ios`)
+  - geolocator (from `.symlinks/plugins/geolocator/ios`)
+  - image_picker (from `.symlinks/plugins/image_picker/ios`)
+  - manage_calendar_events (from `.symlinks/plugins/manage_calendar_events/ios`)
+  - path_provider (from `.symlinks/plugins/path_provider/ios`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  flutter_contacts:
+    :path: ".symlinks/plugins/flutter_contacts/ios"
+  geolocator:
+    :path: ".symlinks/plugins/geolocator/ios"
+  image_picker:
+    :path: ".symlinks/plugins/image_picker/ios"
+  manage_calendar_events:
+    :path: ".symlinks/plugins/manage_calendar_events/ios"
+  path_provider:
+    :path: ".symlinks/plugins/path_provider/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
+  flutter_contacts: edb1c5ce76aa433e20e6cb14c615f4c0b66e0983
+  geolocator: f5e3de65e241caba7ce3e8a618803387bda73384
+  image_picker: 50e7c7ff960e5f58faa4d1f4af84a771c671bc4a
+  manage_calendar_events: 0338d505ea26cdfd20cd883279bc28afa11eca34
+  path_provider: abfe2b5c733d04e238b0d8691db0cfd63a27a93c
+
+PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
+
+COCOAPODS: 1.10.1
