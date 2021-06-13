@@ -81,7 +81,7 @@ class _ServerState extends State<Server> {
     return file.writeAsString('$content');
   }
 
-  List viewsWidgets = [];
+  List<Widget> viewsWidgets = [];
 
   void createViews() {
     print(DateTime.now());
