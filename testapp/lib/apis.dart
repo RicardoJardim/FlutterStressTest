@@ -104,38 +104,40 @@ class _APIState extends State<API> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.green,
-      body: Center(
-          child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          GlobalButton(
-              title: "Camera",
-              callback: () {
-                openCamera();
-              }),
-          GlobalButton(
-              title: "Gallery",
-              callback: () {
-                getImage();
-              }),
-          GlobalButton(
-              title: "GPS",
-              callback: () {
-                getGPS();
-              }),
-          GlobalButton(
-              title: "Calendar",
-              callback: () {
-                getCalendar();
-              }),
-          GlobalButton(
-              title: "Contacts",
-              callback: () {
-                getContacts();
-              })
-        ],
-      )),
+      body: Padding(
+        padding: const EdgeInsets.only(top: 20.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+        GlobalButton(
+            title: "Camera",
+            callback: () {
+              openCamera();
+            }),
+        GlobalButton(
+            title: "Gallery",
+            callback: () {
+              getImage();
+            }),
+        GlobalButton(
+            title: "GPS",
+            callback: () {
+              getGPS();
+            }),
+        GlobalButton(
+            title: "Calendar",
+            callback: () {
+              getCalendar();
+            }),
+        GlobalButton(
+            title: "Contacts",
+            callback: () {
+              getContacts();
+            })
+          ],
+        ),
+      ),
     );
   }
 }

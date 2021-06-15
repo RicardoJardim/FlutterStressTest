@@ -114,8 +114,14 @@ class _ServerState extends State<Server> {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Stack(
-            children: viewsWidgets.length == 0 ? [Text("")] : viewsWidgets,
+          Container(
+             width: MediaQuery.of(context).size.width,
+             height: 200,
+            child: Center(
+              child: Stack(
+                children: viewsWidgets.length == 0 ? [Text("")] : viewsWidgets,
+              ),
+            ),
           ),
           GlobalButton(
               title: "Views",
