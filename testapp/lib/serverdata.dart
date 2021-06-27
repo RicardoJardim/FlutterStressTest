@@ -24,8 +24,8 @@ class _ServerState extends State<Server> {
   void random_user() async {
     print("Random user start " + DateTime.now().toString());
 
-    final response = await http.get(Uri.https(
-        "random-data-api.com", "/api/users/random_user", {'size': '100'}));
+    final response = await http.get(Uri.http(
+        "192.168.1.112:3000", "/users", {'size': '100'}));
     random_bank();
     if (response.statusCode == 200) {
       List<dynamic> list = convert.jsonDecode(response.body);
@@ -39,8 +39,8 @@ class _ServerState extends State<Server> {
   void random_bank() async {
     print("Random bank start " + DateTime.now().toString());
 
-    final response = await http.get(Uri.https(
-        "random-data-api.com", "/api/bank/random_bank", {'size': '100'}));
+    final response = await http.get(Uri.http(
+        "192.168.1.112:3000", "/banks", {'size': '100'}));
 
     if (response.statusCode == 200) {
       List<dynamic> list = convert.jsonDecode(response.body);
