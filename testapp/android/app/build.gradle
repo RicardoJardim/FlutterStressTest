@@ -42,6 +42,7 @@ android {
 
     lintOptions {
         disable 'InvalidPackage'
+        abortOnError false 
     }
 
     defaultConfig {

@@ -28,6 +28,7 @@ class _ServerState extends State<Server> {
         "192.168.1.112:3000", "/users", {'size': '100'}));
     random_bank();
     if (response.statusCode == 200) {
+      print(response.body);
       List<dynamic> list = convert.jsonDecode(response.body);
       writeCounter(list);
       print("Random user end " + DateTime.now().toString());
@@ -86,7 +87,7 @@ class _ServerState extends State<Server> {
   void createViews() {
     print(DateTime.now());
 
-    for (int i = 0; i <= 1000; i++) {
+    for (int i = 0; i <= 500; i++) {
       viewsWidgets.add(_view(Colors.green));
     }
     setState(() {});
@@ -96,7 +97,7 @@ class _ServerState extends State<Server> {
   void createBTN() {
     print(DateTime.now());
 
-    for (int i = 0; i <= 1000; i++) {
+    for (int i = 0; i <= 500; i++) {
       viewsWidgets.add(_btn(Colors.blue));
     }
     setState(() {});
